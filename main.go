@@ -20,7 +20,7 @@ type Participant struct {
 	numberOfTickets uint
 }
 
-type Academy struct {
+type EventID struct {
 	firstName   string
 	middleName  string
 	lastName    string
@@ -28,7 +28,8 @@ type Academy struct {
 	age         int
 	gender      string
 	phoneNumber int
-	tryOutDate  uint
+	eventName string
+	eventDate  string
 }
 
 // This is an event management system for football stadium's matches.
@@ -71,7 +72,7 @@ func main() {
 	case "2":
 		for {
 
-			firstName, middleName, lastName, email, age, gender, phoneNumber := getAcademyInput()
+			firstName, middleName, lastName, email, age, gender, phoneNumber := getEventInput()
 			isValidName, isValidEmail,isValideAge, isValidTryOutDate := validateParticipantInput(firstName, middleName, lastName, email, age, tryOutDate)
 
 			if isValidName && isValidEmail && isValidTryOutDate {
